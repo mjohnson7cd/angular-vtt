@@ -1,0 +1,16 @@
+<!-- game-board.component.html -->
+
+<div class="game-board" [style.transform]="'scale(' + zoomLevel + ')'">
+  <!-- Your map or image goes here -->
+  <img src="assets/DryadsRuins34x40.jpg" alt="Game Map" class="map-image"
+       [style.width.px]="gridColumns * 70" [style.height.px]="gridRows * 70">
+
+  <!-- Grid overlay -->
+  <div class="grid-overlay" [style.gridTemplateColumns]="gridTemplateColumns" [style.gridTemplateRows]="gridTemplateRows">
+    <div *ngFor="let cell of gridCells" class="grid-cell"></div>
+  </div>
+</div>
+<div class="zoom-controls">
+  <button (click)="zoomIn()">Zoom In</button>
+  <button (click)="zoomOut()">Zoom Out</button>
+</div>
